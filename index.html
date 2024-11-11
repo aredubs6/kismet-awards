@@ -11,9 +11,57 @@
 <body>
     <div class="background">
         <div class="big-body">
-            <div class="logo"></div>
-            <h4 class="riddle-text">Under the night’s dazzling crown, where lucky stars come out to play,
-                Seek the fruit of passion in the heart of luxury's bay.</h4>
+            <img src="assets/kismet-logo-heart_white.svg" alt="Kismet Awards Night" class="logo">
+            </img>
+            <div class="riddle-container">
+                <p class="riddle-text">
+                    In a galaxy of <span class="highlight">stars</span>, where stars shine bright,
+                </p>
+                <p class="riddle-text">
+                    A <span class="highlight">crimson</span> gem awaits, beyond the city's light.
+                </p>
+                <p class="riddle-text">
+                    Seek where <span class="highlight">fortune</span> and flavour intertwine,
+                </p>
+                <p class="riddle-text">
+                    Name the <span class="highlight">fruit</span>, and you'll find the sign.
+                </p>
+            </div>
+            <div id="countdown" class="countdown-text"></div>
+            <img src="assets/cherry.png" alt="Event Location" class="cherry-image">
+            <div id="event-details" style="display: none;">
+                <div class="location-text">
+                    <p>Level 1, Casino</p>
+                    <p>The Star, 80 Pyrmont Street</p>
+                    <p>Pyrmont NSW 2009</p>
+                </div>
+            </div>
+
+            <script>
+                function updateCountdown() {
+                    // Set the event time to 8:14 AM Melbourne time (UTC+10:00)
+                    const eventTime = new Date(Date.UTC(2024, 10, 11, 21, 49, 0)).getTime(); // November is month 10 (0-indexed)
+                    const now = new Date().getTime();
+                    const distance = eventTime - now;
+
+                    if (distance < 0) {
+                        document.getElementById("countdown").style.display = "none";
+                        document.getElementById("event-details").style.display = "block";
+                        document.querySelector(".cherry-image").style.display = "block"; // Show the cherry image
+                        return;
+                    }
+
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                    document.getElementById("countdown").innerHTML = `Location drops in ${hours}h ${minutes}m`;
+                }
+
+                // Hide the cherry image initially
+                document.querySelector(".cherry-image").style.display = "none";
+
+                setInterval(updateCountdown, 1000);
+            </script>
         </div>
     </div>  
 </body>
