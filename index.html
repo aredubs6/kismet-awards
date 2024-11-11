@@ -12,7 +12,6 @@
     <div class="background">
         <div class="big-body">
             <img src="assets/kismet-logo-heart_white.svg" alt="Kismet Awards Night" class="logo">
-            </img>
             <div class="riddle-container">
                 <p class="riddle-text">
                     In a galaxy of <span class="highlight">stars</span>, where stars shine bright,
@@ -29,18 +28,16 @@
             </div>
             <div id="countdown" class="countdown-text"></div>
             <img src="assets/cherry.png" alt="Event Location" class="cherry-image">
-            <div id="event-details" style="display: none;">
-                <div class="location-text">
-                    <p>Level 1, Casino</p>
-                    <p>The Star, 80 Pyrmont Street</p>
-                    <p>Pyrmont NSW 2009</p>
-                </div>
+            <div id="event-details" class="location-text" style="display: none;">
+                <p>Level 1, Casino</p>
+                <p>The Star, 80 Pyrmont Street</p>
+                <p>Pyrmont NSW 2009</p>
             </div>
 
             <script>
                 function updateCountdown() {
                     // Set the event time to 8:14 AM Melbourne time (UTC+10:00)
-                    const eventTime = new Date(Date.UTC(2024, 10, 11, 21, 58, 0)).getTime(); // November is month 10 (0-indexed)
+                    const eventTime = new Date(Date.UTC(2024, 10, 11, 22, 14, 0)).getTime(); // November is month 10 (0-indexed)
                     const now = new Date().getTime();
                     const distance = eventTime - now;
 
