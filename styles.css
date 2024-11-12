@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     overflow: auto; /* Allow scrolling if content overflows */
 }
 
